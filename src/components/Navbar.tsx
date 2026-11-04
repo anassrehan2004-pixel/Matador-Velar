@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.2 }}
             id="mobile-menu-overlay"
-            className="fixed inset-x-4 top-20 z-50 md:hidden glass-panel rounded-2xl p-6 border border-white/15 shadow-2xl"
+            className="fixed inset-x-4 top-23 z-50 md:hidden glass-panel rounded-2xl p-6 border border-white/15 shadow-2xl"
           >
             <div className="flex flex-col space-y-4">
               <a
