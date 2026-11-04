@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --midnight-base: #0C0F0F;
+    --surface: #111414;
+    --surface-container-low: #191c1c;
+    --surface-container: #1d2020;
+    --surface-container-high: #282a2a;
+    --surface-bright: #373a3a;
+    --electric-gold: #FFD700;
+    --sapphire-glow: #3B82F6;
+    --on-surface: #e1e3e2;
+    --on-surface-variant: #d0c6ab;
+    --glass-border: rgba(255, 255, 255, 0.12);
+  }
+
+  body {
+    background-color: #0C0F0F;
+    color: #e1e3e2;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+}
+
+.font-serif-accent {
+  font-family: 'EB Garamond', serif;
+}
+
+.font-headline {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Neo-Institutional Custom Utilities */
+.glass-panel {
+  background: rgba(20, 22, 22, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,215,0,0.15) 40%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.btn-whatsapp {
+  position: relative;
+  background: rgba(20, 22, 22, 0.9);
+  box-shadow: 
+    inset 0 0 12px rgba(34, 197, 94, 0.2),
+    0 0 20px rgba(34, 197, 94, 0.35),
+    0 10px 30px -10px rgba(34, 197, 94, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 
+    inset 0 0 20px rgba(34, 197, 94, 0.35),
+    0 0 30px rgba(34, 197, 94, 0.6),
+    0 15px 40px -5px rgba(34, 197, 94, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-neo {
+  position: relative;
+  background: rgba(20, 22, 22, 0.9);
+  box-shadow: 
+    inset 0 0 12px rgba(255, 215, 0, 0.12),
+    0 10px 30px -10px rgba(255, 215, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-neo:hover {
+  box-shadow: 
+    inset 0 0 20px rgba(255, 215, 0, 0.25),
+    0 15px 40px -5px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-sapphire {
+  position: relative;
+  background: rgba(20, 22, 22, 0.9);
+  box-shadow: 
+    inset 0 0 12px rgba(59, 130, 246, 0.15),
+    0 10px 30px -10px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-sapphire:hover {
+  box-shadow: 
+    inset 0 0 20px rgba(59, 130, 246, 0.3),
+    0 15px 40px -5px rgba(59, 130, 246, 0.45);
+  transform: translateY(-2px);
+}
+
+.void-bg {
+  background-color: #0C0F0F;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
+}
+
+.editorial-number {
+  font-family: 'EB Garamond', serif;
+  opacity: 0.035;
+  font-size: clamp(12rem, 20vw, 22rem);
+  line-height: 1;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Ambient Motion Effect */
+@keyframes subtleFlow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2%, 2%) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.ambient-motion {
+  animation: subtleFlow 25s infinite ease-in-out alternate;
+}
+
+.aum-range {
+  appearance: none;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--range-color, #4f7cff) 0%,
+    var(--range-color, #4f7cff) var(--range-progress, 0%),
+    rgba(255, 255, 255, 0.13) var(--range-progress, 0%),
+    rgba(255, 255, 255, 0.13) 100%
+  );
+  touch-action: pan-y;
+}
+
+.aum-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #202226;
+  border-radius: 50%;
+  background: var(--range-color, #4f7cff);
+  box-shadow: 0 0 0 1px var(--range-color, #4f7cff), 0 0 12px color-mix(in srgb, var(--range-color, #4f7cff) 45%, transparent);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.aum-range::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border: 3px solid #202226;
+  border-radius: 50%;
+  background: var(--range-color, #4f7cff);
+  box-shadow: 0 0 0 1px var(--range-color, #4f7cff);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.aum-range:hover::-webkit-slider-thumb,
+.aum-range:focus-visible::-webkit-slider-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px var(--range-color, #4f7cff), 0 0 18px color-mix(in srgb, var(--range-color, #4f7cff) 65%, transparent);
+}
+
+.aum-range:hover::-moz-range-thumb,
+.aum-range:focus-visible::-moz-range-thumb {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px var(--range-color, #4f7cff), 0 0 18px color-mix(in srgb, var(--range-color, #4f7cff) 65%, transparent);
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #282a2a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #373a3a;
+}
