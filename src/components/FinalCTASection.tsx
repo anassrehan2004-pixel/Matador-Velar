@@ -40,15 +40,17 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 relative z-10">
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            id="final-schedule-btn"
-            onClick={onScheduleConsultation}
-            className="btn-neo text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all cursor-pointer shadow-lg"
-          >
-            <span>Schedule a Private Portfolio Consultation</span>
-          </motion.button>
+          <motion.a
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  id="final-schedule-btn"
+  href="https://calendly.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-neo inline-block text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all cursor-pointer shadow-lg"
+>
+  <span>Schedule a Private Portfolio Consultation</span>
+</motion.a>
 
           <motion.button
             whileHover={{ scale: 1.02 }}

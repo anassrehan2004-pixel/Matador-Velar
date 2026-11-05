@@ -58,7 +58,6 @@ export const BrokerSection: React.FC<BrokerSectionProps> = ({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 id="broker-view-btn"
-                onClick={onViewBrokerDetails}
                 className="btn-neo text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all flex justify-center items-center gap-2 cursor-pointer shadow-lg"
               >
                 <span>View Recommended Broker</span>
