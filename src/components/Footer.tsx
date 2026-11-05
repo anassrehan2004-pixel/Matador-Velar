@@ -42,7 +42,9 @@ export const Footer: React.FC<FooterProps> = ({
               Explore
             </h2>
             <a href="#" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Home</a>
-            <a href="#fund-management" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Fund Management</a>
+            <a href="#portfolio-simulator" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Simulator</a>
+            <a href="#services" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Services</a>
+            <a href="#process" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Process</a>
             <a href="#broker-recommendation" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Broker Recommendation</a>
             <a href="#telegram-community" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Telegram Community</a>
                         <a href="#financial-education" className="text-sm text-[#d0c6ab]/80 transition-colors hover:text-[#FFD700]">Financial Education</a>

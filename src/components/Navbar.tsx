@@ -58,33 +58,46 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-1 lg:space-x-3 items-center">
-          <a
-            id="nav-link-fund"
-            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-3.5 py-2 rounded-lg"
-            href="#fund-management"
+        <div className="hidden xl:flex items-center space-x-0.5">
+                    <a
+            id="nav-link-services"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
+            href="#portfolio-simulator"
           >
-            Fund Management
+            Simulation
+          </a>
+          <a
+            id="nav-link-services"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
+            href="#services"
+          >
+            Services
+          </a>
+          <a
+            id="nav-link-process"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
+            href="#process"
+          >
+            Process
           </a>
           <a
             id="nav-link-broker"
-            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-3.5 py-2 rounded-lg"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
             href="#broker-recommendation"
           >
             Broker Recommendation
           </a>
           <a
             id="nav-link-telegram"
-            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-3.5 py-2 rounded-lg"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
             href="#telegram-community"
           >
             Telegram Community
           </a>
           <a
             id="nav-link-financial-education"
-            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-3.5 py-2 rounded-lg"
+            className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
             href="#financial-education"
-            rel="noopener noreferrer"
           >
             Financial Education
           </a>
@@ -108,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           id="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-[#e1e3e2] p-2 hover:text-[#FFD700] transition-colors"
+          className="xl:hidden text-[#e1e3e2] p-2 hover:text-[#FFD700] transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -124,15 +137,22 @@ export const Navbar: React.FC<NavbarProps> = ({
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.2 }}
             id="mobile-menu-overlay"
-            className="fixed inset-x-4 top-23 z-50 md:hidden glass-panel rounded-2xl p-6 border border-white/15 shadow-2xl"
+            className="fixed inset-x-4 top-23 z-50 xl:hidden glass-panel rounded-2xl p-6 border border-white/15 shadow-2xl"
           >
             <div className="flex flex-col space-y-4">
               <a
-                href="#fund-management"
+                href="#services"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-[#e1e3e2] hover:text-[#FFD700] font-headline uppercase tracking-wider text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all"
               >
-                Fund Management
+                Services
+              </a>
+              <a
+                href="#process"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#e1e3e2] hover:text-[#FFD700] font-headline uppercase tracking-wider text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all"
+              >
+                Process
               </a>
               <a
                 href="#broker-recommendation"
@@ -149,9 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 Telegram Community
               </a>
               <a
-                href="https://wa.me/15632800598"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#financial-education"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-[#e1e3e2] hover:text-[#FFD700] font-headline uppercase tracking-wider text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all"
               >

@@ -57,7 +57,7 @@ export const TelegramSection: React.FC<TelegramSectionProps> = ({
         </motion.div>
 
         {/* Heading */}
-        <h2 className="font-headline text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#e1e3e2] mb-5 tracking-tight max-w-3xl">
+        <h2 className="font-headline text-3xl sm:text-4xl lg:text-[40px] text-[#e1e3e2] font-bold mb-5 leading-tight tracking-tight max-w-3xl">
           Join Our Official Telegram Community
         </h2>
 

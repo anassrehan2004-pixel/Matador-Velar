@@ -115,9 +115,7 @@ export const FinancialEducationSection: React.FC = () => {
           <div className="relative z-10">
             <div className="mb-9 flex flex-col gap-5 md:mb-12 md:flex-row md:items-end md:justify-between">
               <div className="max-w-2xl">
-                <div className="mb-4 flex items-center gap-2 text-[#FFD700]">
-                  <BookOpen className="h-4 w-4" />
-                  <span className="font-headline text-xs font-semibold uppercase tracking-[0.18em]">
+                <div className="mb-4 flex items-center gap-2 text-[#FFD700]">                  <span className="font-headline text-xs font-semibold uppercase tracking-[0.18em]">
                     Financial Education Service
                   </span>
                 </div>

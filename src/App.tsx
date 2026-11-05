@@ -3,7 +3,9 @@ import { motion } from 'motion/react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { FinancialEducationSection } from './components/FinancialEducationSection';
-import { FundManagementSection } from './components/FundManagementSection';
+import { PortfolioSimulatorSection } from './components/PortfolioSimulatorSection';
+import { ServicesSection } from './components/ServicesSection';
+import { ProcessSection } from './components/ProcessSection';
 import { BrokerSection } from './components/BrokerSection';
 import { TelegramSection } from './components/TelegramSection';
 import { FinalCTASection } from './components/FinalCTASection';
@@ -92,17 +94,13 @@ export default function App() {
       <main className="relative z-10 pt-[140px] md:pt-[160px] pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-20 max-w-[1440px] mx-auto">
         {/* Hero Section */}
         <HeroSection
-          onExploreFund={() => scrollToSection('fund-management')}
+          onExploreServices={() => scrollToSection('services')}
           onFindBroker={() => scrollToSection('broker-recommendation')}
-          onOpenTelegram={handleOpenTelegram}
         />
 
-        {/* Fund Management Section */}
-        <FundManagementSection
-          onScheduleConsultation={() => setConsultationOpen(true)}
-          onOpenWhatsApp={handleOpenWhatsApp}
-          onOpenCalculator={() => setCalculatorOpen(true)}
-        />
+        <PortfolioSimulatorSection />
+        <ServicesSection />
+        <ProcessSection />
 
         {/* Broker Recommendation Section */}
         <BrokerSection

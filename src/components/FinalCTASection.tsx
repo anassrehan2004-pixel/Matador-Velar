@@ -35,7 +35,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
           className="absolute inset-0 bg-gradient-to-t from-[#FFD700] via-transparent to-transparent pointer-events-none"
         />
 
-        <h2 className="font-headline text-3xl sm:text-4xl lg:text-[40px] font-bold text-[#e1e3e2] mb-8 relative z-10 tracking-tight">
+        <h2 className=" mb-8 relative z-10 font-headline text-3xl sm:text-4xl lg:text-[40px] text-[#e1e3e2] font-bold mb-5 leading-tight tracking-tight">
           Ready to Discuss Your Portfolio?
         </h2>
 
