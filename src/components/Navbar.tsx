@@ -6,15 +6,11 @@ import { WhatsAppIcon } from './WhatsAppIcon';
 const logoUrl = new URL('../../assets/Logo.png', import.meta.url).href;
 
 interface NavbarProps {
-  onOpenConsultation: () => void;
   onOpenWhatsApp: () => void;
-  onOpenTelegram: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenConsultation,
   onOpenWhatsApp,
-  onOpenTelegram,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

@@ -5,13 +5,11 @@ import { motion, useSpring, useTransform } from 'motion/react';
 const HeroImage = new URL('../../assets/hero image.jpg', import.meta.url).href;
 
 interface HeroSectionProps {
-  onExploreServices: () => void;
-  onFindBroker: () => void;
+  onOpenWhatsApp: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onExploreServices,
-  onFindBroker,
+  onOpenWhatsApp,
 }) => {
   const animatedAum = useSpring(0, { stiffness: 55, damping: 30 });
   const formattedAum = useTransform(animatedAum, (value) => `$${value.toFixed(1)}M`);
@@ -41,29 +39,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           <div className="mb-8 flex items-center gap-4 sm:gap-6">
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               id="hero-explore-fund-btn"
-              href="#services"
-              onClick={(event) => {
-                event.preventDefault();
-                onExploreServices();
-              }}
+              type="button"
+              onClick={onOpenWhatsApp}
               className="btn-neo group flex cursor-pointer items-center gap-2 rounded-full border border-[#FFD700]/40 px-6 py-3.5 font-headline !text-[12px] font-semibold text-[#FFD700] sm:px-8 sm:py-4 sm:text-sm"
             >
-              <span>Request a Private Mandate Briefing</span>            
-              </motion.a>
+              <span>Request a Private Mandate Briefing</span>
+            </motion.button>
 
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               id="hero-find-broker-btn"
               href="#services"
-              onClick={(event) => {
-                event.preventDefault();
-                onFindBroker();
-              }}
               className="glass-panel flex cursor-pointer items-center gap-2 rounded-full px-6 py-3.5 font-headline !text-[12px] font-semibold tracking-[0.1em] text-[#e1e3e2] transition-all duration-300 hover:border-white/25 hover:bg-white/10 sm:px-8 sm:py-4 sm:text-sm"
             >
               <span>View Portfolio Advisory Services</span>

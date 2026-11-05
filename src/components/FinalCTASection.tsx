@@ -3,13 +3,10 @@ import { motion } from 'motion/react';
 import { TelegramIcon } from './TelegramIcon';
 
 interface FinalCTASectionProps {
-  onScheduleConsultation: () => void;
-  onOpenWhatsApp?: () => void;
   onOpenTelegram: () => void;
 }
 
 export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
-  onScheduleConsultation,
   onOpenTelegram,
 }) => {
   return (

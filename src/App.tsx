@@ -10,17 +10,9 @@ import { BrokerSection } from './components/BrokerSection';
 import { TelegramSection } from './components/TelegramSection';
 import { FinalCTASection } from './components/FinalCTASection';
 import { Footer } from './components/Footer';
-import { ConsultationModal } from './components/ConsultationModal';
-import { WhatsAppModal } from './components/WhatsAppModal';
-import { BrokerModal } from './components/BrokerModal';
-import { TelegramModal } from './components/TelegramModal';
-import { StrategyCalculatorModal } from './components/StrategyCalculatorModal';
 import { LegalModal } from './components/LegalModal';
 
 export default function App() {
-  const [consultationOpen, setConsultationOpen] = useState(false);
-  const [brokerOpen, setBrokerOpen] = useState(false);
-  const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | 'enrollment' | null>(null);
 
   const handleOpenWhatsApp = () => {
@@ -29,13 +21,6 @@ export default function App() {
 
   const handleOpenTelegram = () => {
     window.open('https://telegram.org', '_blank');
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -85,17 +70,14 @@ export default function App() {
 
       {/* Floating Island Navigation */}
       <Navbar
-        onOpenConsultation={() => setConsultationOpen(true)}
         onOpenWhatsApp={handleOpenWhatsApp}
-        onOpenTelegram={handleOpenTelegram}
       />
 
       {/* Main Content Layout */}
       <main className="relative z-10 pt-[140px] md:pt-[160px] pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-20 max-w-[1440px] mx-auto">
         {/* Hero Section */}
         <HeroSection
-          onExploreServices={() => scrollToSection('services')}
-          onFindBroker={() => scrollToSection('broker-recommendation')}
+          onOpenWhatsApp={handleOpenWhatsApp}
         />
 
         <PortfolioSimulatorSection />
@@ -103,9 +85,7 @@ export default function App() {
         <ProcessSection />
 
         {/* Broker Recommendation Section */}
-        <BrokerSection
-          onViewBrokerDetails={() => setBrokerOpen(true)}
-        />
+        <BrokerSection />
 
         {/* Telegram Community Section */}
         <TelegramSection
@@ -116,8 +96,6 @@ export default function App() {
 
         {/* Final CTA Section */}
         <FinalCTASection
-          onScheduleConsultation={() => setConsultationOpen(true)}
-          onOpenWhatsApp={handleOpenWhatsApp}
           onOpenTelegram={handleOpenTelegram}
         />
       </main>
@@ -127,24 +105,6 @@ export default function App() {
         onOpenPrivacy={() => setLegalModalType('privacy')}
         onOpenTerms={() => setLegalModalType('terms')}
         onOpenEnrollment={() => setLegalModalType('enrollment')}
-      />
-
-      {/* Interactive Modals & Screens */}
-      <ConsultationModal
-        isOpen={consultationOpen}
-        onClose={() => setConsultationOpen(false)}
-      />
-
-      <BrokerModal
-        isOpen={brokerOpen}
-        onClose={() => setBrokerOpen(false)}
-        onOpenConsultation={() => setConsultationOpen(true)}
-      />
-
-      <StrategyCalculatorModal
-        isOpen={calculatorOpen}
-        onClose={() => setCalculatorOpen(false)}
-        onOpenConsultation={() => setConsultationOpen(true)}
       />
 
       <LegalModal

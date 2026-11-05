@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { BROKER_DATA } from '../data/content';
 
-interface BrokerSectionProps {
-  onViewBrokerDetails: () => void;
-}
-
-export const BrokerSection: React.FC<BrokerSectionProps> = ({
-  onViewBrokerDetails,
-}) => {
+export const BrokerSection: React.FC = () => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 40 }}
