@@ -37,14 +37,6 @@ export const BrokerSection: React.FC<BrokerSectionProps> = ({
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Heading & Advisory Description */}
           <div className="lg:col-span-6">
-            {/* Sapphire Verified Badge */}
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: -5 }}
-              className="w-12 h-12 rounded-full bg-[#373a3a]/60 border border-[#3B82F6]/40 flex items-center justify-center mb-8 shadow-[0_0_15px_rgba(59,130,246,0.2)] cursor-pointer"
-            >
-              <ShieldCheck className="w-6 h-6 text-[#3B82F6]" />
-            </motion.div>
-
             <h2 className="font-headline text-3xl sm:text-4xl lg:text-[40px] text-[#e1e3e2] font-bold mb-5 leading-tight tracking-tight">
               Looking for a Reliable Broker?
             </h2>
@@ -54,14 +46,17 @@ export const BrokerSection: React.FC<BrokerSectionProps> = ({
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                id="broker-view-btn"
-                className="btn-neo text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all flex justify-center items-center gap-2 cursor-pointer shadow-lg"
-              >
-                <span>View Recommended Broker</span>
-              </motion.button>
+<motion.a
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  id="broker-view-btn"
+  href="https://calendly.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-neo inline-flex items-center justify-center gap-2 text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all cursor-pointer shadow-lg"
+>
+  <span>Schedule a Private Portfolio Consultation</span>
+</motion.a>
             </div>
           </div>
 
