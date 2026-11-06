@@ -29,6 +29,7 @@ const annualYieldTarget = 60;
 const maxChartSteps = 100;
 const phaseDuration = 3.5;
 const frameDuration = 0.08;
+const simulationStepsPerUpdate = 2;
 
 const formatCurrency = (value: number) =>
   `$${Math.round(value).toLocaleString('en-US')}`;
@@ -133,33 +134,39 @@ export const PortfolioSimulatorSection: React.FC = () => {
 
     const timer = window.setInterval(() => {
       setSimulation((current) => {
-        const currentPhaseIndex =
-          Math.floor((current.frame * frameDuration) / phaseDuration) % marketPhases.length;
-        const yieldRate = getWeightedYield(allocation, currentPhaseIndex);
-        const lastValue = current.history[current.history.length - 1];
-        let nextValue: number;
+        let frame = current.frame;
+        let history = current.history;
 
-        if (current.history.length < maxChartSteps) {
-          const progress = current.history.length / maxChartSteps;
-          nextValue =
-            progress < 0.2
-              ? capital * (progress / 0.2)
-              : Math.max(100, lastValue * (1 + (yieldRate / 100) * frameDuration * 0.4));
-        } else {
-          nextValue = Math.max(
-            100,
-            lastValue * (1 + (yieldRate / 100) * frameDuration * 0.3),
-          );
+        for (let step = 0; step < simulationStepsPerUpdate; step += 1) {
+          const currentPhaseIndex =
+            Math.floor((frame * frameDuration) / phaseDuration) % marketPhases.length;
+          const yieldRate = getWeightedYield(allocation, currentPhaseIndex);
+          const lastValue = history[history.length - 1];
+          let nextValue: number;
+
+          if (history.length < maxChartSteps) {
+            const progress = history.length / maxChartSteps;
+            nextValue =
+              progress < 0.2
+                ? capital * (progress / 0.2)
+                : Math.max(100, lastValue * (1 + (yieldRate / 100) * frameDuration * 0.4));
+          } else {
+            nextValue = Math.max(
+              100,
+              lastValue * (1 + (yieldRate / 100) * frameDuration * 0.3),
+            );
+          }
+
+          history =
+            history.length < maxChartSteps
+              ? [...history, nextValue]
+              : [...history.slice(1), nextValue];
+          frame += 1;
         }
 
-        const history =
-          current.history.length < maxChartSteps
-            ? [...current.history, nextValue]
-            : [...current.history.slice(1), nextValue];
-
-        return { frame: current.frame + 1, history };
+        return { frame, history };
       });
-    }, frameDuration * 1000);
+    }, frameDuration * simulationStepsPerUpdate * 1000);
 
     return () => window.clearInterval(timer);
   }, [allocation, capital, isPlaying]);

@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         id="main-navbar"
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-6 py-3 rounded-full mt-4 md:mt-6 mx-auto w-[calc(100%-24px)] md:w-[calc(100%-48px)] max-w-7xl backdrop-blur-2xl border border-white/10 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-6 py-3 rounded-full mt-4 md:mt-6 mx-auto w-[calc(100%-24px)] md:w-[calc(100%-48px)] max-w-7xl backdrop-blur-md border border-white/10 transition-all duration-300 ${
           scrolled
             ? 'bg-[#111414]/90 shadow-[0px_30px_60px_rgba(0,0,0,0.9)] border-white/15'
             : 'bg-[#111414]/70 shadow-[0px_20px_50px_rgba(0,0,0,0.8)]'
@@ -86,7 +86,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a
             id="nav-link-telegram"
             className="text-[#d0c6ab] font-headline text-xs font-semibold uppercase tracking-[0.12em] hover:text-[#FFD700] hover:bg-white/5 transition-all duration-300 px-2 py-2 rounded-lg"
-            href="#telegram-community"
+            href="https://t.me/matadorvelar"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Telegram Community
           </a>
@@ -100,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* CTA Button - Chat on WhatsApp with Green Neon */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.96 }}
@@ -158,8 +160,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 Broker Recommendation
               </a>
               <a
-                href="#telegram-community"
-                onClick={() => setMobileMenuOpen(false)}
+                href="https://t.me/matadorvelar"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#e1e3e2] hover:text-[#FFD700] font-headline uppercase tracking-wider text-sm py-2 px-3 rounded-lg hover:bg-white/5 transition-all"
               >
                 Telegram Community

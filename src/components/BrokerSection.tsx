@@ -15,17 +15,9 @@ export const BrokerSection: React.FC = () => {
     >
       <div className="glass-panel glow-border rounded-2xl p-8 sm:p-10 md:p-14 lg:p-16 relative overflow-hidden group shadow-2xl">
         {/* Sapphire Glow Ambient Effect */}
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.08, 0.14, 0.08],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute top-0 left-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px] pointer-events-none"
+        <div
+          aria-hidden="true"
+          className="absolute top-0 left-0 w-96 h-96 bg-[#3B82F6] opacity-[0.08] rounded-full blur-[120px] pointer-events-none"
         />
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -44,7 +36,7 @@ export const BrokerSection: React.FC = () => {
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   id="broker-view-btn"
-  href="https://calendly.com/"
+  href="https://calendly.com/dinesh-matadorvelar/consultation"
   target="_blank"
   rel="noopener noreferrer"
   className="btn-neo inline-flex items-center justify-center gap-2 text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all cursor-pointer shadow-lg"
@@ -59,12 +51,12 @@ export const BrokerSection: React.FC = () => {
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="glass-panel border border-white/12 rounded-xl p-6 sm:p-8 bg-[#191c1c]/70 backdrop-blur-xl relative overflow-hidden shadow-2xl"
+              className="glass-panel border border-white/12 rounded-xl p-6 sm:p-8 bg-[#191c1c]/70 backdrop-blur-md relative overflow-hidden shadow-2xl"
             >
               {/* Corner Accent */}
               <div className="absolute top-0 right-0 p-3 bg-white/5 border-b border-l border-white/10 rounded-bl-xl">
                 <span className="text-[10px] font-mono uppercase text-[#3B82F6] font-semibold tracking-wider flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-ping"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>
                   Verified Institution
                 </span>
               </div>

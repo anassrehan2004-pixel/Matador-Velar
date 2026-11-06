@@ -2,13 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { TelegramIcon } from './TelegramIcon';
 
-interface FinalCTASectionProps {
-  onOpenTelegram: () => void;
-}
-
-export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
-  onOpenTelegram,
-}) => {
+export const FinalCTASection: React.FC = () => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 35 }}
@@ -20,16 +14,9 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
     >
       <div className="glass-panel glow-border rounded-2xl p-8 sm:p-12 md:p-14 text-center relative overflow-hidden shadow-2xl">
         {/* Subtle gold gradient bottom overlay */}
-        <motion.div
-          animate={{
-            opacity: [0.06, 0.12, 0.06],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="absolute inset-0 bg-gradient-to-t from-[#FFD700] via-transparent to-transparent pointer-events-none"
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#FFD700] via-transparent to-transparent opacity-[0.09] pointer-events-none"
         />
 
         <h2 className=" mb-8 relative z-10 font-headline text-3xl sm:text-4xl lg:text-[40px] text-[#e1e3e2] font-bold mb-5 leading-tight tracking-tight">
@@ -41,7 +28,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   whileHover={{ scale: 1.02 }}
   whileTap={{ scale: 0.98 }}
   id="final-schedule-btn"
-  href="https://calendly.com/"
+  href="https://calendly.com/dinesh-matadorvelar/consultation"
   target="_blank"
   rel="noopener noreferrer"
   className="btn-neo inline-block text-[#FFD700] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg border border-[#FFD700]/30 transition-all cursor-pointer shadow-lg"
@@ -49,16 +36,18 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   <span>Schedule a Private Portfolio Consultation</span>
 </motion.a>
 
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             id="final-telegram-btn"
-            onClick={onOpenTelegram}
+            href="https://t.me/matadorvelar"
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-panel text-[#e1e3e2] font-headline text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex items-center gap-2 cursor-pointer"
           >
             <TelegramIcon className="w-4 h-4 text-[#FFD700]" />
             <span>Join Our Official Telegram Community</span>
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.section>

@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             We bridge private capital, corporate treasuries, and high-net-worth investors with structured regional deal flow and high-yield asset allocation channels.
           </p>
 
-          <div className="mb-8 flex items-center gap-4 sm:gap-6">
+          <div className="mb-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-6">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               whileTap={{ scale: 0.98 }}
               id="hero-find-broker-btn"
               href="#services"
-              className="glass-panel flex cursor-pointer items-center gap-2 rounded-full px-6 py-3.5 font-headline !text-[12px] font-semibold tracking-[0.1em] text-[#e1e3e2] transition-all duration-300 hover:border-white/25 hover:bg-white/10 sm:px-8 sm:py-4 sm:text-sm"
+              className="glass-panel flex cursor-pointer items-center gap-2 rounded-full px-6 py-3.5 text-center font-headline !text-[12px] font-semibold tracking-[0.1em] text-[#e1e3e2] transition-all duration-300 hover:border-white/25 hover:bg-white/10 sm:px-8 sm:py-4 sm:text-sm"
             >
               <span>View Portfolio Advisory Services</span>
             </motion.a>

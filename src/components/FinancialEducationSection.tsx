@@ -106,10 +106,9 @@ export const FinancialEducationSection: React.FC = () => {
         className="mb-24 scroll-mt-24 md:mb-32"
       >
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#111414]/80 p-6 shadow-2xl sm:p-9 md:p-12">
-          <motion.div
-            animate={{ scale: [1, 1.15, 1], opacity: [0.04, 0.08, 0.04] }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-            className="pointer-events-none absolute -right-20 -top-32 h-80 w-80 rounded-full bg-[#FFD700] blur-[110px]"
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-32 h-80 w-80 rounded-full bg-[#FFD700] opacity-[0.05] blur-[110px]"
           />
 
           <div className="relative z-10">
@@ -227,7 +226,7 @@ export const FinancialEducationSection: React.FC = () => {
               onMouseDown={(event) => {
                 if (event.target === event.currentTarget) setSelectedProgram(null);
               }}
-              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-xl"
+              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md"
             >
               <motion.div
                 initial={{ opacity: 0, y: 18, scale: 0.98 }}
