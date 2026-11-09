@@ -337,7 +337,7 @@ export const PortfolioSimulatorSection: React.FC = () => {
                 Current Portfolio Balance
               </p>
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="font-mono text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span className="font-mono !text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
                   {formatCurrency(currentBalance)}
                 </span>
                 <span
@@ -375,16 +375,16 @@ export const PortfolioSimulatorSection: React.FC = () => {
                 <input
                   id="portfolio-capital"
                   type="range"
-                  min="1000"
-                  max="30000"
-                  step="1000"
+                  min="20000"
+                  max="1000000"
+                  step="10000"
                   value={capital}
                   onChange={(event) => updateCapital(Number(event.target.value))}
                   aria-label="Initial capital investment"
                   className="aum-range h-2 w-full cursor-pointer"
                   style={{
                     '--range-color': '#FFD700',
-                    '--range-progress': `${((capital - 1000) / 29000) * 100}%`,
+                    '--range-progress': `${((capital - 10000) / 990000) * 100}%`,
                   } as React.CSSProperties}
                 />
               </div>

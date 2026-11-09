@@ -15,7 +15,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const formattedAum = useTransform(animatedAum, (value) => `$${value.toFixed(1)}M`);
 
   useEffect(() => {
-    animatedAum.set(5.8);
+    animatedAum.set(58.3);
   }, [animatedAum]);
 
   return (
@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="mb-1.5 flex items-center gap-2">
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
                 <span className="font-headline text-[10px] font-semibold uppercase tracking-[0.16em] text-[#d0c6ab]">
-                  Assets Under Management
+                  Capital Under Advisory
                 </span>
               </div>
               <div className="flex items-end gap-3">
