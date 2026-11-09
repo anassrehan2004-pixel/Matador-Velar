@@ -51,7 +51,7 @@ interface SimulationState {
 const initialSimulation: SimulationState = { frame: 0, history: [0] };
 
 export const PortfolioSimulatorSection: React.FC = () => {
-  const [capital, setCapital] = useState(6000);
+  const [capital, setCapital] = useState(20000);
   const [allocation, setAllocation] = useState<Allocation>(initialAllocation);
   const [simulation, setSimulation] = useState<SimulationState>(initialSimulation);
   const [isPlaying, setIsPlaying] = useState(false);
